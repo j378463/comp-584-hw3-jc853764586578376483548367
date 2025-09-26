@@ -20,4 +20,5 @@ This is my submission for HW3 Applying Responsiveness and Table Based Design to 
 ## Hosting
 
 
-This site is hosted on GitHub ().
+This site is hosted on GitHub (https://j378463.github.io/comp-584-hw3-jc853764586578376483548367/).
+
