@@ -2,24 +2,41 @@
 <html lang="en">
 <head>
     <title>CSUN HW3 Email Campaign</title>
-    <!-- Ensures proper character encoding for email clients -->
+    <!-- 
+        Declares the character encoding. 
+        Email clients—especially Outlook—depend on this to avoid strange symbols or broken characters.
+    -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <!-- Makes email responsive on mobile devices -->
+    <!-- 
+        Ensures mobile devices scale the layout correctly.
+        Without this, most phones will zoom out and shrink the email layout.
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Forces IE to use latest rendering mode -->
+    <!-- 
+        Prevents Internet Explorer and older Outlook versions from using compatibility modes, 
+        which can break modern rendering.
+    -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <style type="text/css">
-        /* CLIENT-SPECIFIC STYLES */
+        /* 
+            CLIENT-SPECIFIC STYLES
+            These fix inconsistent behavior across Gmail, Outlook, iOS Mail, Yahoo, etc.
+        */
         body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
         table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
         img { -ms-interpolation-mode: bicubic; }
 
-        /* RESET STYLES */
+        /* 
+            RESET STYLES
+            Removes default formatting added by various email clients.
+        */
         img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
         table { border-collapse: collapse !important; }
         body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
 
-        /* iOS BLUE LINKS */
+        /* 
+            Prevent automatic blue styling on detected phone numbers, addresses, or dates in iOS Mail.
+        */
         a[x-apple-data-detectors] {
             color: inherit !important;
             text-decoration: none !important;
@@ -29,7 +46,7 @@
             line-height: inherit !important;
         }
 
-        /* GMAIL BLUE LINKS */
+        /* Prevent Gmail from forcing blue link styles when inside a <u> wrapper */
         u + #body a {
             color: inherit;
             text-decoration: none;
@@ -39,7 +56,7 @@
             line-height: inherit;
         }
 
-        /* SAMSUNG MAIL BLUE LINKS */
+        /* Fix for Samsung Android mail app which also forces its own link colors */
         #MessageViewBody a {
             color: inherit;
             text-decoration: none;
@@ -51,15 +68,26 @@
     </style>
 </head>
 <body id="body" style="margin: 0 !important; padding: 0 !important; background-color: #f4f4f4; font-family: Arial, sans-serif;">
-<!-- Main table container -->
-<!-- Using tables for layout which is required for consistent rendering in email clients like Outlook -->
+
+<!-- 
+    Main layout begins.
+    Tables—not divs—are required for reliable layout rendering in email clients,
+    because Outlook does NOT support modern CSS layout like flexbox or grid.
+-->
 <table role="presentation" width="100%" style="background-color: #f4f4f4;">
 <table role="presentation" width="100%" style="background-color: #f4f4f4;">
     <tr>
         <td align="center">
-            <!-- 600px fixed width is standard for email templates -->
+            <!-- 
+                Inner content table.
+                600px is the industry-standard width for email newsletters.
+                This keeps text readable on desktop without feeling too wide.
+            -->
             <table role="presentation" width="600" style="background-color: #ffffff; margin: 20px auto;">
-                <!-- Logo image -->
+                        <!-- 
+                            Logo placeholder.
+                            Using max-width ensures scaling works on mobile.
+                        -->
                 <tr>
                     <td style="text-align: center; padding: 1px 0;">
                         <img src="https://media.istockphoto.com/id/1219938870/vector/mail-icon-for-web-design-send-new-message-vector.jpg?s=612x612&w=0&k=20&c=1DDlMCBadJ6w0aLBj6MdclO5Oiu2VD6qPeDzKaVjty4=" alt="New Message" style="max-width: 200px; height: auto;">
@@ -121,4 +149,5 @@
 </body>
 
 </html>
+
 
